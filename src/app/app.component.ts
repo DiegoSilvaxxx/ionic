@@ -27,6 +27,7 @@ export class MyApp {
       { title: 'Contato', component: 'FormContatoPage' },
       { title: 'Lista Filmes', component: 'ListaFilmesServPage' },
       { title: 'Clientes', component: 'ClientesPage' }
+      { title: 'Endereco', component: 'BuscaEnderecoPage' }
     ];
 
   }
