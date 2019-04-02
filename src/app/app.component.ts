@@ -26,8 +26,9 @@ export class MyApp {
       { title: 'Teste', component: 'TesteIonicPage' },
       { title: 'Contato', component: 'FormContatoPage' },
       { title: 'Lista Filmes', component: 'ListaFilmesServPage' },
-      { title: 'Clientes', component: 'ClientesPage' }
-      { title: 'Endereco', component: 'BuscaEnderecoPage' }
+      { title: 'Clientes', component: 'ClientesPage' },
+      { title: 'Endereco', component: 'BuscaEnderecoPage' },
+      { title: 'Noticias', component: 'NoticiasPage' }
     ];
 
   }

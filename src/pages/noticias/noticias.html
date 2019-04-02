@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Lista de Noticias</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-content class="card-background-page">
+
+    <ion-card *ngFor="let n of noticias">
+
+      <ion-item>
+
+        <div class="card-title">
+          <h2>{{n.titulo}}</h2>
+          <p>{{n.conteudo}}</p>
+        </div>
+     
+      </ion-item>
+      <img src="{{n.imagem}}" />
+
+    </ion-card>
+
+
+
+
+  </ion-content>
+
+
+
+</ion-content>

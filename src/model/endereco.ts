@@ -1,5 +1,6 @@
 export class Endereco{
     
+  formBuilder: any;
   "cep": string;
   "logradouro": string;
   "complemento": string;

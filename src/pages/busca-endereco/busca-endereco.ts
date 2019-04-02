@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Endereco } from '../../model/endereco';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { EnderecoService } from '../../services/endereco.service';
 
 
 
@@ -11,15 +12,17 @@ import { FormBuilder } from '@angular/forms';
   templateUrl: 'busca-endereco.html',
 })
 export class BuscaEnderecoPage {
-
+ 
   formGroup: FormGroup;
-  endereco : Endereco = new Endereco();
+  @ViewChild('cep') cep;
+ 
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams, 
     public enderecoServ : EnderecoService,
     public formBullder : FormBuilder) {
-    this.formGroup = this.formBullder.group({
+   
+   this.formGroup = this.formBullder.group({
 
       cep : [''],
       logradouro : [''],
@@ -31,10 +34,18 @@ export class BuscaEnderecoPage {
   }
 
   buscar(){
-    let cep = this.formGroup.controls['cep'].value
-    this.enderecoServ.buscaCEP(cep)
+    
+    this.enderecoServ.buscaCEP(this.cep.value)
     .subscribe(response =>{
-      console.log(response)
+     
+      this.formGroup = this.formBullder.group({
+
+        logradouro : [response['logradouro']],
+        bairro :  [response['bairro']],
+        localidade :  [response['localidade']],
+        uf : [response['uf']],
+  
+      })
     })
   }
 

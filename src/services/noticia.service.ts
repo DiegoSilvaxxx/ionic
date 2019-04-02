@@ -1,16 +1,18 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs/Observable";
-import { Endereco } from "../model/endereco";
+import { Noticia } from "../model/noticia";
+
 
 @Injectable()
-export class EnderecoService{
+export class NoticiaService{
     
+  
     constructor(private http : HttpClient){
     }
 
-    buscaCEP(cep : string) : Observable<Endereco> {
-        return this.http.get<Endereco>(`http://viacep.com.br/ws/${cep}/json/`)
+    listaDeNoticias() : Observable<Noticia[]> {
+        return this.http.get<Noticia[]>('http://www.mocky.io/v2/5ca284633300009800d34040');
     }
 
 }

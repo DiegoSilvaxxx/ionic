@@ -15,4 +15,34 @@
 
 <ion-content padding>
 
+
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Digite o cep</ion-label>
+      <ion-input type="text" #cep></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button block (click)="buscar()">Pesquisar</button>
+
+  <form [formGroup]="formGroup" (ngsubmit)="buscar()">
+    <ion-list>
+        <ion-item>
+            <ion-label floating>Logradouro</ion-label>
+            <ion-input formControlName="logradouro" type="text"></ion-input>
+          </ion-item>
+      <ion-item>
+        <ion-label floating>Bairro</ion-label>
+        <ion-input formControlName="bairro" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>localidade</ion-label>
+        <ion-input formControlName="localidade" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>UF</ion-label>
+        <ion-input formControlName="uf" type="text"></ion-input>
+      </ion-item>
+    </ion-list>
+
+  </form>
 </ion-content>
